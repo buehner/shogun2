@@ -8,8 +8,6 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
 
 import de.terrestris.shogun2.model.PersistentObject;
 import de.terrestris.shogun2.model.layer.appearance.LayerAppearance;
@@ -39,11 +37,9 @@ public class Layer extends PersistentObject {
 	private String type;
 
 	@ManyToOne
-	@Cascade(CascadeType.SAVE_UPDATE)
 	private LayerDataSource source;
 
 	@ManyToOne
-	@Cascade(CascadeType.SAVE_UPDATE)
 	private LayerAppearance appearance;
 
 	/**
